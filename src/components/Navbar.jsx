@@ -1,9 +1,8 @@
 import { AiOutlineMenu } from "react-icons/ai";
 import { BsFillSunFill, BsMoonStarsFill } from "react-icons/bs";
-import { RiEnglishInput } from "react-icons/ri";
 import { useState } from "react";
 import { useContext } from "react";
-import { LanguageContext, ThemeContext, strings } from "../App";
+import { LanguageContext, ThemeContext } from "../App";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
@@ -64,7 +63,7 @@ function Navbar() {
                 </button>
               ) : (
                 <button onClick={() => setLanguage("en")}>
-                  <RiEnglishInput size={19} className="hover:text-yellow-700" />
+                  <h1 className="hover:text-yellow-500">EN</h1>
                 </button>
               )}
             </div>
@@ -119,11 +118,12 @@ function Navbar() {
               </button>
             ) : (
               <button onClick={() => setLanguage("en")}>
-                <RiEnglishInput
+                <h1
                   onClick={() => setOpen(false)}
-                  size={19}
                   className="hover:text-yellow-500 mx-auto"
-                />
+                >
+                  EN
+                </h1>
               </button>
             )}
           </ul>

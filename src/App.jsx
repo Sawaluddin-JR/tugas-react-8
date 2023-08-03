@@ -6,7 +6,9 @@ import Home from "./components/Home";
 import ListProject from "./components/ListProject";
 import Navbar from "./components/Navbar";
 import Skills from "./components/Skills";
+import { BsFillArrowUpCircleFill } from "react-icons/bs";
 import { createContext } from "react";
+import { useRef } from "react";
 
 export const strings = {
   id: {
@@ -54,6 +56,10 @@ export const LanguageContext = createContext({
 const App = () => {
   const [theme, setTheme] = useState("dark");
   const [language, setLanguage] = useState("en");
+  const backToTopButtonRef = useRef(null);
+  const scroll = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
     <div
       className={`${
@@ -68,6 +74,13 @@ const App = () => {
           <Skills />
           <ListProject />
           <Contact />
+          <button
+            className="fixed bottom-4 left-2 p-2 bg-yellow-500 text-gray-800 rounded-full shadow hover:bg-yellow-200"
+            ref={backToTopButtonRef}
+            onClick={() => scroll(backToTopButtonRef.current)}
+          >
+            <BsFillArrowUpCircleFill size={24} />
+          </button>
           <Footer />
         </ThemeContext.Provider>
       </LanguageContext.Provider>
