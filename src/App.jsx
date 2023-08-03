@@ -9,6 +9,7 @@ import Skills from "./components/Skills";
 import { BsFillArrowUpCircleFill } from "react-icons/bs";
 import { createContext } from "react";
 import { useRef } from "react";
+import { useEffect } from "react";
 
 export const strings = {
   id: {
@@ -57,9 +58,21 @@ const App = () => {
   const [theme, setTheme] = useState("dark");
   const [language, setLanguage] = useState("en");
   const backToTopButtonRef = useRef(null);
+
   const scroll = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  useEffect(() => {
+    console.log(
+      `tema yang digunakan sekarang ${theme === "dark" ? "gelap" : "terang"}`
+    );
+    console.log(
+      `bahasa yang digunakan sekarang ${
+        language === "en" ? "english" : "indonesia"
+      }`
+    );
+  }, [theme, language]);
   return (
     <div
       className={`${
