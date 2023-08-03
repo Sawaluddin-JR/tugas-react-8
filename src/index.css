@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply font-Poppins scroll-smooth;
+}
+body {
+  @apply box-border bg-gray-900 text-gray-100;
+}
+
+.text-primary {
+  @apply text-yellow-600;
+}
+.border-primary {
+  @apply border-yellow-600;
+}
+.btn-primary {
+  @apply bg-yellow-600 font-semibold text-white md:mx-0 mx-auto rounded-full py-3 px-6 flex items-center gap-2;
+}
+.aboutImg::after {
+  @apply content-[''] w-full left-0 top-0 rounded-xl rotate-12 h-full absolute bg-gray-600 -z-10;
+}
+::placeholder {
+  @apply text-lg;
+}
+::selection {
+  @apply bg-cyan-600;
+}
